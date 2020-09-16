@@ -1,0 +1,28 @@
+<!Doctype html>
+<html lang="sv">
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{ css }}">
+        <title>*html exists*</title>
+        <meta charset="UTF-8">
+        <link rel="shortcut icon" href="{{ favicon }}">
+    </head>
+    <script>
+        function copy(){
+            var copyText = document.getElementById("url");
+            copyText.select();
+            copyText.setSelectionRange(0, 99999);
+            document.execCommand("copy");
+        }
+    </script>
+    <body>
+        <div id="vertical">
+            <div id="horizontal">
+                <h1>{{ short_url }}</h1>
+            </div>
+            <div id="horizontal">
+                <button onclick="copy()">Copy to clipboard</button>
+            </div>
+            <input id="url" value="{{ short_url }}" type="text">
+        </div>
+    </body>
+</html>

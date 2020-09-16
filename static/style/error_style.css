@@ -1,0 +1,44 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+#container{
+    background-color: rgb(22,22,22);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+h1{
+    color: white;
+    text-align: center;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
+
+button{
+    border: none;
+    border-radius: 15px;
+    height: 50px;
+    padding: 10px 30px 10px 30px;
+    font-size: 20px;
+    transition: 0.2s;
+    background-color: RGB(83,24,23);
+    color: white;
+}
+
+button:hover {
+    background-color: white;
+    color: black;
+}
+
+#buttonContainer{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+button:focus{
+    outline: none;
+}

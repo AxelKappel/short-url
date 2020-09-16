@@ -1,0 +1,104 @@
+:root{
+    --text-color: rgb(133,133,133);
+    --border-radius: 15px;
+}
+
+body{
+    margin: 0px;
+    padding: 0px;
+    background-color: rgb(22,22,22);
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
+
+form{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+input[type="text"]{
+    display: inline-block;
+    background-color: black;
+    color: var(--text-color);
+    margin: 0px;
+    transition: 0.2s;
+}
+
+h1{
+    display: inline-block;
+    background-color: black;
+    color: var(--text-color);
+    height: 40px;
+    margin: 0px;
+    border: none;
+    border-right: none;
+    padding: 5px 5px 5px 40px;
+    border-radius: var(--border-radius) 0 0 var(--border-radius);
+    transition: 0.2s;
+    font-size: 28px;
+}
+
+input[type="text"]:focus {
+    color: white;
+}
+
+#short_container{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    border-radius: var(--border-radius);
+}
+
+#short{
+    height: 30px;
+    width: 300px;
+    font-size: 25px;
+    padding: 10px;
+    border: none;
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+    margin-bottom: 50px;
+}
+
+#long_container{
+    margin-bottom: 100px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+#long{
+    height: 30px;
+    width: 590px;
+    font-size: 25px;
+    border: none;
+    padding: 10px 30px 10px 30px;
+    border-radius: var(--border-radius);
+}
+
+#submit_container{
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+#submit{
+    border: none;
+    border-radius: var(--border-radius);
+    height: 50px;
+    padding: 10px 30px 10px 30px;
+    font-size: 20px;
+    transition: 0.2s;
+    background-color: RGB(83,24,23);
+    color: white;
+}
+
+#submit:hover {
+    background-color: white;
+    color: black;
+}
+
+input:focus, textarea:focus, select:focus{
+    outline: none;
+}

@@ -1,0 +1,26 @@
+<!Doctype html>
+<html lang="sv">
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{ css }}">
+        <title>*html exists*</title>
+        <meta charset="UTF-8">
+        <link rel="shortcut icon" href="{{ favicon }}">
+    </head>
+    <script>""</script>
+    <body>
+        <div id="container">
+            <form action="{{ new }}" method="POST">
+                <div id="long_container">
+                    <input type="text" name="long_url" id="long" required>
+                </div>
+                <div id="short_container">
+                    <h1>{{ url }}</h1>
+                    <input type="text" name="short_url" id="short">
+                </div>
+                <div id="submit_container">
+                    <input type="submit" id="submit" value="Make short!">
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

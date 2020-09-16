@@ -1,0 +1,22 @@
+<!Doctype html>
+<html lang="sv">
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{ css }}">
+        <title>*html exists*</title>
+        <meta charset="UTF-8">
+        <link rel="shortcut icon" href="{{ favicon }}">
+    </head>
+    <script>
+        function goBack() {
+          window.history.back();
+        }
+    </script>
+    <body>
+        <div id="container">
+            <h1>{{ message }}</h1> 
+            <div id="buttonContainer">
+                <button onclick="goBack()">Go Back</button>
+            </div>
+        </div>
+    </body>
+</html>
