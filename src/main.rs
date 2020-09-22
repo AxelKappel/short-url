@@ -1,9 +1,7 @@
-use actix_web::{web, App, HttpServer, HttpRequest, Result};
-use actix_files::{NamedFile};
+use actix_web::{web, App, HttpServer};
 
 use std::sync::RwLock;
 use std::collections::HashMap;
-use std::path::PathBuf;
 
 mod db;
 mod url_validator;
@@ -11,14 +9,10 @@ mod error;
 mod index;
 mod new;
 mod redirect;
+mod default;
 
 pub struct AppState {
     cache: RwLock<HashMap<std::string::String, std::string::String>>,
-}
-
-async fn static_files(req: HttpRequest) -> Result<NamedFile> {
-    let path: PathBuf = ["static", req.match_info().query("directory"), req.match_info().query("filename")].iter().collect();
-    Ok(NamedFile::open(path)?)
 }
 
 #[actix_rt::main]
@@ -30,6 +24,7 @@ async fn main() -> std::io::Result<()> {
     HttpServer::new(move ||{
         App::new()
             .app_data(data.clone())
+            .service(actix_files::Files::new("/static", "./static"))
             .service(web::resource("/")
                 .name("index")
                 .route(web::get().to(index::index))
@@ -44,10 +39,12 @@ async fn main() -> std::io::Result<()> {
             )
             .service(web::resource("/static/{directory}/{filename}")
                 .name("static")
-                .route(web::get().to(static_files))
+            )
+            .default_service(
+                web::get().to(default::default)
             )
     })
-    .bind("127.0.0.1:8088")?
+    .bind("127.0.0.1:80")?
     .run()
     .await
 }
